@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>♕ 𝕊𝕙𝕒𝕞𝕤 𝕊𝕥𝕠𝕣𝕖 ♕</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <div class="language-switcher">
+    <button onclick="toggleLanguage()">
+      <i class="fas fa-language"></i>
+      <span id="language-text">English</span>
+    </button>
+  </div>
+
+  <header class="compact-header">
+    <div class="header-content">
+      <h1><i class="fas fa-crown"></i> <span data-translate="store-name">♕ 𝕊𝕙𝕒𝕞𝕤 𝕊𝕥𝕠𝕣𝕖 ♕</span></h1>
+      <nav>
+        <button onclick="showCategory('gems')"><i class="fas fa-gem"></i> <span data-translate="gems">الجواهر</span></button>
+        <button onclick="showCategory('resources')"><i class="fas fa-tree"></i> <span data-translate="resources">الموارد</span></button>
+        <button onclick="showCategory('diamonds')"><i class="fas fa-diamond"></i> <span data-translate="diamonds">الماس</span></button>
+        <button onclick="showCategory('killers')"><i class="fas fa-skull"></i> <span data-translate="killers">القتلة</span></button>
+        <button onclick="showCategory('bots')"><i class="fas fa-robot"></i> <span data-translate="bots">البوتات</span></button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="product-list"></main>
+
+  <section id="cart-section" class="compact-cart">
+    <div class="section-header">
+      <h2><i class="fas fa-shopping-cart"></i> <span data-translate="cart-title">سلة المشتريات</span></h2>
+      <button class="clear-cart" onclick="clearCart()"><i class="fas fa-trash"></i> <span data-translate="clear-cart">تفريغ السلة</span></button>
+    </div>
+    
+    <ul id="cart-items"></ul>
+    <div class="cart-summary">
+      <p id="cart-total"><span data-translate="total">الإجمالي</span>: $0.00 | 0.00 <span class="currency">جنيه</span></p>
+      <button id="edit-cart" onclick="toggleEditMode()"><i class="fas fa-trash"></i> <span data-translate="edit">حذف منتجات</span></button>
+    </div>
+    
+    <div id="payment-methods" class="compact-payment">
+      <h3><i class="fas fa-credit-card"></i> <span data-translate="payment-methods">طرق الدفع</span>:</h3>
+      <div class="payment-options">
+        <div class="payment-method" onclick="copyPaymentInfo('binance')">
+          <img src="https://cryptologos.cc/logos/bnb-bnb-logo.png" alt="Binance">
+          <div class="payment-details">
+            <h4>Binance Pay</h4>
+            <p>shamsocastle@gmail.com</p>
+            <p>ID: 1072224171</p>
+          </div>
+        </div>
+        
+        <div class="payment-method" onclick="copyPaymentInfo('vodafone')">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Vodafone_icon.svg/1200px-Vodafone_icon.svg.png" alt="Vodafone Cash">
+          <div class="payment-details">
+            <h4>Vodafone Cash</h4>
+            <p>01010452090</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <button id="whatsapp-order" onclick="sendOrder()">
+      <i class="fab fa-whatsapp"></i> <span data-translate="send-order">إرسال الطلب على واتساب</span>
+    </button>
+  </section>
+
+  <div id="notification"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
